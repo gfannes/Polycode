@@ -29,6 +29,8 @@
 #include "PolyPerlin.h"
 #include <algorithm>
 #include <stdlib.h>
+#include <cstring>
+using namespace std;
 
 using namespace Polycode;
 
@@ -85,7 +87,7 @@ Image::Image(Image *copyImage) {
 	width = copyImage->getWidth();
 	height = copyImage->getHeight();		
 	imageData = (char*)malloc(width*height*pixelSize);
-	memcpy(imageData, copyImage->getPixels(), width*height*pixelSize);
+    memcpy(imageData, copyImage->getPixels(), width*height*pixelSize);
 }
 
 Image::Image(char *data, int width, int height, int type) {
